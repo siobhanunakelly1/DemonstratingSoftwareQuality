@@ -36,7 +36,7 @@ Calculations for specific Criterion I have given a lower estimate in comparison 
 
 ### Velocity Metric
 
-
+Velocity is used to estimate how much work a team is capable of completing per sprint. The velocity metric is calculated based on how many story points were completed in previous sprints. The story points from all fully-completed tasks in each sprint are added up and the average of these is the team's velocity. The team must also decide on their Definition of Done - a list of criteria that must be met before task can be marked as complete e.g. full test coverage. So for example, even if all coding is completed for a task it cannot be marked as done and its points cannot be included in the total unless the testing is complete too. The velocity is then used when planning future sprints to decide how many stories should be pulled in based on their points. Generally velocity should not be exceeded and in a case where a developer might be free they should first offer to help others with large stories rather than pulling in new ones. This will help to stop points being carried over to the next sprint.
 
 
 ## Test-Driven Development

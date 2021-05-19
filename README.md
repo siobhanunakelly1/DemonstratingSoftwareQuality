@@ -10,7 +10,7 @@
  - add a criterion
  - get all rubrics
  - get rubric by name
-5. Create Student Class **1**
+5. Create StudentGrade Class **1**
 6. Create Grade Class **1**
 7. Add Student grade functionality to Controller Class including: **5**
  - create a grade
@@ -46,3 +46,16 @@ Velocity is used to estimate how much work a team is capable of completing per s
 ## Version-Control
 
 ## Code-Review Checklist
+
+When reviewing someone else's code, there are a few questions to ask:
+ - Do the changes match the intent?
+ - Is the code easy to understand?
+ - Is there any duplication of code/could functionality be reused anywhere?
+ - What is the level of test coverage? Also review the quality of the tests, are they passing for the right reasons? Are they testing what they are supposed to be testing?
+
+Code-review through pull requests:
+ - Read the pull request description and start a coversation from there
+ - Leave a comment with any questions or notes you have
+ - Always direct the comments at the code and not the author
+ - If there is too much back and forth in the comments, maybe it is time to organise a meeting to clear up outstanding queries
+

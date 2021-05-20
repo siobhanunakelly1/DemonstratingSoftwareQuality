@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class Controller {
     private ArrayList<Rubric> rubrics = new ArrayList<>();
+    private ArrayList<StudentGrade> studentGrades = new ArrayList<>();
 
     public Controller(){
 

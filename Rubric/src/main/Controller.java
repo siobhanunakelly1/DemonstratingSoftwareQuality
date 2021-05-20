@@ -31,6 +31,16 @@ public class Controller {
         r.addCriterion(c);
     }
 
+    public ArrayList<StudentGrade> getStudentGrades(){
+        return this.studentGrades;
+    }
+
+    public StudentGrade createStudentGrade(String name){
+        StudentGrade sg = new StudentGrade(name);
+        studentGrades.add(sg);
+        return sg;
+    }
+
     
 }
 

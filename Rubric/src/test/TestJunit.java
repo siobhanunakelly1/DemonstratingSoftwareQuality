@@ -3,6 +3,7 @@ package test;
 import main.Controller;
 import main.Criterion;
 import main.Rubric;
+import main.StudentGrade;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -77,6 +78,13 @@ public class TestJunit {
         Criterion cr = new Criterion("Algebra");
         c.addCriterionToRubric(cr, r);
         assertTrue(r.getCriteria().contains(cr));
+    }
+
+    @Test
+    public void testCreateStudentGrade(){
+        Controller c = new Controller();
+        StudentGrade sg = c.createStudentGrade("Sarah");
+        assertTrue(c.getStudentGrades().contains(sg));
     }
     
 }

@@ -9,10 +9,14 @@ public class Controller {
     }
 
     public Rubric createRubric(String subject){
-        return new Rubric(subject);
+        Rubric r = new Rubric(subject);
+        rubrics.add(r);
+        return r;
     }
 
-    
+    public ArrayList<Rubric> getAllRubrics(){
+        return this.rubrics;
+    }
 
     
 }

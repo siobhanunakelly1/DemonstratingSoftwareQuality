@@ -6,9 +6,6 @@ import main.Rubric;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
-
-
 import org.junit.Test;
 
 public class TestJunit {
@@ -71,6 +68,15 @@ public class TestJunit {
         c.createRubric("English");
         c.createRubric("Irish");
         assertEquals(null, c.getRubricByName("French"));
+    }
+
+    @Test
+    public void testAddCriterionToRubric(){
+        Controller c = new Controller();
+        Rubric r = c.createRubric("Maths");
+        Criterion cr = new Criterion("Algebra");
+        c.addCriterionToRubric(cr, r);
+        assertTrue(r.getCriteria().contains(cr));
     }
     
 }

@@ -26,6 +26,10 @@ public class Controller {
         return null;
     }
 
+    public void addCriterionToRubric(Criterion c, Rubric r){
+        r.addCriterion(c);
+    }
+
     
 }
 

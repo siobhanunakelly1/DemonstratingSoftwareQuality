@@ -25,6 +25,8 @@ public class Grade {
         this.criterion = criterion;
     }
 
-    
+    public String getCriterionName(){
+        return criterion.getCriterion();
+    }
     
 }

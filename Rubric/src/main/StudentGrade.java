@@ -22,7 +22,17 @@ public class StudentGrade {
         return grades;
     }
 
+    public void addGrade(int score, Criterion criterion){
+        Grade grade = new Grade(score, criterion);
+        grades.add(grade);
+    }
 
-    
+    public Grade getGradeByCriterionName(String name){
+        for(Grade g : grades){
+            if(g.getCriterionName().equals(name))
+                return g;
+        }
+        return null;
+    }
 
 }

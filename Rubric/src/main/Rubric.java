@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public class Rubric {
     private String subject;
     private ArrayList<Criterion> criteria = new ArrayList<>();
+    private ArrayList<StudentGrade> grades = new ArrayList<>();
 
     public Rubric(String subject){
         this.subject = subject;
@@ -27,6 +28,26 @@ public class Rubric {
 
     public void addCriterion(Criterion criterion){
         this.criteria.add(criterion);
+    }
+
+    public ArrayList<StudentGrade> getGrades() {
+        return grades;
+    }
+
+    public StudentGrade getGradeByName(String name){
+        for(StudentGrade sg : this.grades){
+            if(sg.getStudentName().equals(name))
+                return sg;
+        }
+        return null;
+    }
+
+    public void setGrades(ArrayList<StudentGrade> grades) {
+        this.grades = grades;
+    }
+
+    public void addStudentGrade(StudentGrade sg){
+        grades.add(sg);
     }
 
 }

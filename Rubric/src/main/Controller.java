@@ -27,20 +27,26 @@ public class Controller {
         return null;
     }
 
-    public void addCriterionToRubric(Criterion c, Rubric r){
-        r.addCriterion(c);
+    public Criterion addCriterionToRubric(String criterion, Rubric r){
+        Criterion cr = new Criterion(criterion);
+        r.addCriterion(cr);
+        return cr;
     }
 
     public ArrayList<StudentGrade> getStudentGrades(){
         return this.studentGrades;
     }
 
-    public StudentGrade createStudentGrade(String name){
+    public StudentGrade createStudentGrade(String name, Rubric rubric){
         StudentGrade sg = new StudentGrade(name);
+        rubric.addStudentGrade(sg);
         studentGrades.add(sg);
         return sg;
     }
 
+    public void addScoreToGrade(StudentGrade sg, Criterion cr, int score){
+        sg.addGrade(score, cr);
+    }
     
 }
 

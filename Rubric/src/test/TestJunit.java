@@ -75,16 +75,31 @@ public class TestJunit {
     public void testAddCriterionToRubric(){
         Controller c = new Controller();
         Rubric r = c.createRubric("Maths");
-        Criterion cr = new Criterion("Algebra");
-        c.addCriterionToRubric(cr, r);
+        Criterion cr = c.addCriterionToRubric("Geometry", r);
         assertTrue(r.getCriteria().contains(cr));
     }
 
     @Test
     public void testCreateStudentGrade(){
         Controller c = new Controller();
-        StudentGrade sg = c.createStudentGrade("Sarah");
-        assertTrue(c.getStudentGrades().contains(sg));
+        Rubric r = c.createRubric("Art");
+        StudentGrade sg = c.createStudentGrade("Mary", r);
+        for(StudentGrade studentGrade : c.getRubricByName("Art").getGrades()){
+            if(studentGrade.getStudentName().equals("Mary")){
+                assertEquals(studentGrade, sg);
+            }
+        }
+
     }
     
+    @Test
+    public void testAddScoreToGrade(){
+        Controller c = new Controller();
+        Rubric r = c.createRubric("Spanish");
+        Criterion cr = c.addCriterionToRubric("Grammar",r);
+        StudentGrade sg = c.createStudentGrade("Sarah", r);
+        c.addScoreToGrade(sg, cr, 75);
+        StudentGrade studentGrade = c.getRubricByName("Spanish").getGradeByName("Sarah");
+        assertEquals(75, studentGrade.getGradeByCriterionName("Grammar").getScore());
+    } 
 }

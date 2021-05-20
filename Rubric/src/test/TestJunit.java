@@ -5,10 +5,9 @@ import main.Criterion;
 import main.Rubric;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import java.util.ArrayList;
+
 
 import org.junit.Test;
 
@@ -56,5 +55,22 @@ public class TestJunit {
     }
 
 
+    @Test
+    public void testGetRubricByName(){
+        Controller c = new Controller();
+        Rubric m = c.createRubric("Maths");
+        Rubric e = c.createRubric("English");
+        Rubric i = c.createRubric("Irish");
+        assertEquals(e, c.getRubricByName("English"));
+    }
+
+    @Test
+    public void testGetRubricByNameNotExisting(){
+        Controller c = new Controller();
+        c.createRubric("Maths");
+        c.createRubric("English");
+        c.createRubric("Irish");
+        assertEquals(null, c.getRubricByName("French"));
+    }
     
 }

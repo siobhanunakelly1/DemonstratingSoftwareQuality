@@ -18,6 +18,14 @@ public class Controller {
         return this.rubrics;
     }
 
+    public Rubric getRubricByName(String name){
+        for(Rubric r : this.rubrics){
+            if(r.getSubject().equals(name))
+                return r;
+        }
+        return null;
+    }
+
     
 }
 

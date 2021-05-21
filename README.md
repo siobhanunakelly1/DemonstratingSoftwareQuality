@@ -64,3 +64,5 @@ Code-review through pull requests:
  - Always direct the comments at the code and not the author
  - If there is too much back and forth in the comments, maybe it is time to organise a meeting to clear up outstanding queries
 
+ Example of review through pull request: https://github.com/siobhanunakelly1/DemonstratingSoftwareQuality/commit/c8b8216c2ef703f3962bd9f66d373e82ca022a43 
+

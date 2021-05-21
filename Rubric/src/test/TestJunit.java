@@ -153,4 +153,19 @@ public class TestJunit {
         int[] numbers = {5, 15, 25};
         assertEquals(15, c.average(numbers));
     }
+
+    @Test
+    public void testMax(){
+        Controller c = new Controller();
+        int[] numbers = {5, 15, 25};
+        assertEquals(25, c.maxScore(numbers));
+    }
+
+    @Test
+    public void testMin(){
+        Controller c = new Controller();
+        int[] numbers = {5, 15, 25};
+        assertEquals(5, c.minScore(numbers));
+    }
+
 }

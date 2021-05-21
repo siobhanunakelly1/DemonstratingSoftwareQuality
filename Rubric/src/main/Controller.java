@@ -1,5 +1,7 @@
 package main;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Controller {
     private ArrayList<Rubric> rubrics = new ArrayList<>();
@@ -62,6 +64,27 @@ public class Controller {
         }
         return total/numbers.length;
     }
+
+    public int maxScore(int[] numbers){
+        int max = numbers[0];
+    
+        for (int i = 1; i < numbers.length; i++){
+            if (numbers[i] > max)
+                max = numbers[i];
+        }
+        return max;
+    }
+
+    public int minScore(int[] numbers){
+        List<Integer> list= new ArrayList<>();
+        for (int j : numbers) {
+            list.add(j);
+        }
+        Collections.sort(list);
+        return list.get(0);
+    }
+
+    
     
 }
 

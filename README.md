@@ -48,6 +48,8 @@ The idea behind Test-Driven Development is to minimise software defects by testi
 
 ## Version-Control
 
+The GitFlow process for Configuration management allows teams to collaborate on projects. It allows them to work independently on seperate features, review others each others code and shows a clear history of changes. For this project I had the main branch, the develop branch and a branch for each feature. When developing a new feature, a feature branch is created and all development is done here. When it is finished a pull request is created where team members can review changes and either ask question or merge branch if it is okay. All feature branches are merged into the develop branch and once everyone is happy and all changes have been made the develop branch can be merged in to the main.
+
 ## Code-Review Checklist
 
 When reviewing someone else's code, there are a few questions to ask:

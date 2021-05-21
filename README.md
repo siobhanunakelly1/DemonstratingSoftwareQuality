@@ -42,6 +42,8 @@ Velocity is used to estimate how much work a team is capable of completing per s
 
 ## Test-Driven Development
 
+The idea behind Test-Driven Development is to minimise software defects by testing the whole way through development. It starts with testing the smallest components and builds outwards to eventually test the whole system. With the TDD approach the test are written before the code and therefore every peice of functionality should have one or more tests. Every commit I made included one or more unit tests, for example https://github.com/siobhanunakelly1/DemonstratingSoftwareQuality/commit/4ec01ff7365aa473a01e63d4c54af48d77ef1551 
+
 ## Code Coverage Tool
 
 ## Version-Control

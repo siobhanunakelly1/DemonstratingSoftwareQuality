@@ -31,8 +31,11 @@ public class Controller {
 
     public Criterion addCriterionToRubric(String criterion, Rubric r){
         Criterion cr = new Criterion(criterion);
-        r.addCriterion(cr);
-        return cr;
+        if(r.getCriteria().size() < 10){
+            r.addCriterion(cr);
+            return cr;
+        }
+        return null;
     }
 
     public ArrayList<StudentGrade> getStudentGrades(){
@@ -47,7 +50,10 @@ public class Controller {
     }
 
     public void addScoreToGrade(StudentGrade sg, Criterion cr, int score){
-        sg.addGrade(score, cr);
+        if(score > 0 && score < 6){
+            sg.addGrade(score, cr);
+        }
+        
     }
 
     public ArrayList<StudentGrade> getStudentGradesForRubric(String rubricName){
@@ -101,6 +107,8 @@ public class Controller {
 
         return Math.sqrt(standardDeviation/length);
     }
+
+    
     
 }
 

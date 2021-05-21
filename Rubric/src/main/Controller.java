@@ -84,7 +84,23 @@ public class Controller {
         return list.get(0);
     }
 
-    
+    public double standardDeviation(int[] numbers){
+        double sum = 0.0;
+        double standardDeviation = 0.0;
+        int length = numbers.length;
+
+        for(double num : numbers) {
+            sum += num;
+        }
+
+        double mean = sum/length;
+
+        for(double num: numbers) {
+            standardDeviation += Math.pow(num - mean, 2);
+        }
+
+        return Math.sqrt(standardDeviation/length);
+    }
     
 }
 

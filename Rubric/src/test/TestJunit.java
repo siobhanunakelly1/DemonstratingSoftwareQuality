@@ -168,4 +168,11 @@ public class TestJunit {
         assertEquals(5, c.minScore(numbers));
     }
 
+    @Test
+    public void testStandardDeviation(){
+        Controller c = new Controller();
+        int[] numbers = {1, 2, 3};
+        assertEquals(0.81649658092773, c.standardDeviation(numbers), 0.01);
+    }
+
 }

@@ -19,6 +19,7 @@
  - get Rubric by name 
 8. Average, standard deviation, minimum and maximum calculations for Rubric **5**
 9. Average, standard deviation, minimum and maximum calculations for Criterion **2**
+10. Create validation for maximum number of criteria per Rubric and possible scores for Criterion **3**
 
 ### Estimation Explanation
 I gave each task story points using fibonacci sequence based on difficulty and time I think they I think they will take to complete.
@@ -33,6 +34,7 @@ Calculations for the Rubric I gave a 5 as I am not yet sure how to calculate the
 
 Calculations for specific Criterion I have given a lower estimate in comparison to calculations for Rubric as the research will already be completed and hopefully I will be able to reuse some of the functionaility from the previous task.
 
+The validation for scores and number of criteria I have given a 3 as I think the functionality will be relatively straight forward but will involve a number of test cases.
 
 ### Velocity Metric
 

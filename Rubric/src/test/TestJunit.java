@@ -144,7 +144,7 @@ public class TestJunit {
         c.createStudentGrade("Sarah", rubric1);
         c.createStudentGrade("John", rubric1);
 
-        assertNull(c.getStudentGradesForRubric("Portuguese"));
+        assertTrue(c.getStudentGradesForRubric("Portuguese").isEmpty());
     } 
 
 

@@ -49,9 +49,10 @@ public class Controller {
     }
 
     public ArrayList<StudentGrade> getStudentGradesForRubric(String rubricName){
+        ArrayList<StudentGrade> grades = new ArrayList<>();
         if(getRubricByName(rubricName) != null)
-            return getRubricByName(rubricName).getGrades();
-        return null;
+            grades = getRubricByName(rubricName).getGrades();
+        return grades;
 
 
     }

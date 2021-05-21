@@ -147,5 +147,10 @@ public class TestJunit {
         assertTrue(c.getStudentGradesForRubric("Portuguese").isEmpty());
     } 
 
-
+    @Test
+    public void testAverage(){
+        Controller c = new Controller();
+        int[] numbers = {5, 15, 25};
+        assertEquals(15, c.average(numbers));
+    }
 }

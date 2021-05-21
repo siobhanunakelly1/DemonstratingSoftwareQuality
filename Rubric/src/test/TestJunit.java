@@ -104,9 +104,9 @@ public class TestJunit {
         Rubric r = c.createRubric("Spanish");
         Criterion cr = c.addCriterionToRubric("Grammar",r);
         StudentGrade sg = c.createStudentGrade("Sarah", r);
-        c.addScoreToGrade(sg, cr, 75);
+        c.addScoreToGrade(sg, cr, 4);
 
-        assertEquals(75, sg.getGradeByCriterionName("Grammar").getScore());
+        assertEquals(4, sg.getGradeByCriterionName("Grammar").getScore());
     } 
 
     @Test
@@ -115,7 +115,7 @@ public class TestJunit {
         Rubric s = c.createRubric("Spanish");
         Criterion cr = c.addCriterionToRubric("Grammar", s);
         StudentGrade sg = c.createStudentGrade("Sarah", s);
-        c.addScoreToGrade(sg, cr, 75);
+        c.addScoreToGrade(sg, cr, 5);
 
         assertEquals(1, c.getStudentGradesForRubric("Spanish").size());
     } 
@@ -150,22 +150,22 @@ public class TestJunit {
     @Test
     public void testAverage(){
         Controller c = new Controller();
-        int[] numbers = {5, 15, 25};
-        assertEquals(15, c.average(numbers));
+        int[] numbers = {1, 2, 3};
+        assertEquals(2, c.average(numbers));
     }
 
     @Test
     public void testMax(){
         Controller c = new Controller();
-        int[] numbers = {5, 15, 25};
-        assertEquals(25, c.maxScore(numbers));
+        int[] numbers = {1, 4, 5};
+        assertEquals(5, c.maxScore(numbers));
     }
 
     @Test
     public void testMin(){
         Controller c = new Controller();
-        int[] numbers = {5, 15, 25};
-        assertEquals(5, c.minScore(numbers));
+        int[] numbers = {1, 4, 5};
+        assertEquals(1, c.minScore(numbers));
     }
 
     @Test

@@ -47,6 +47,14 @@ public class Controller {
     public void addScoreToGrade(StudentGrade sg, Criterion cr, int score){
         sg.addGrade(score, cr);
     }
+
+    public ArrayList<StudentGrade> getStudentGradesForRubric(String rubricName){
+        if(getRubricByName(rubricName) != null)
+            return getRubricByName(rubricName).getGrades();
+        return null;
+
+
+    }
     
 }
 

@@ -6,6 +6,7 @@ import main.Rubric;
 import main.StudentGrade;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 
@@ -102,4 +103,43 @@ public class TestJunit {
         StudentGrade studentGrade = c.getRubricByName("Spanish").getGradeByName("Sarah");
         assertEquals(75, studentGrade.getGradeByCriterionName("Grammar").getScore());
     } 
+
+    @Test
+    public void testGetStudentGradesForRubricSingle(){
+        Controller c = new Controller();
+        Rubric s = c.createRubric("Spanish");
+        Criterion cr = c.addCriterionToRubric("Grammar", s);
+        StudentGrade sg = c.createStudentGrade("Sarah", s);
+        c.addScoreToGrade(sg, cr, 75);
+        assertEquals(1, c.getStudentGradesForRubric("Spanish").size());
+    } 
+
+    @Test
+    public void testGetStudentGradesForRubricMultiple(){
+        Controller c = new Controller();
+        Rubric rubric1 = c.createRubric("Spanish");
+        c.createStudentGrade("Sarah", rubric1);
+        c.createStudentGrade("John", rubric1);
+
+        Rubric rubric2 = c.createRubric("Philosophy");
+        c.createStudentGrade("Mary", rubric2);
+
+        Rubric rubric3 = c.createRubric("Geography");
+        
+        assertEquals(2, c.getStudentGradesForRubric("Spanish").size());
+        assertEquals(1, c.getStudentGradesForRubric("Philosophy").size());
+        assertEquals(0, c.getStudentGradesForRubric("Geography").size());
+    } 
+
+    @Test
+    public void testGetStudentGradesForRubricNull(){
+        Controller c = new Controller();
+        Rubric rubric1 = c.createRubric("Spanish");
+        c.createStudentGrade("Sarah", rubric1);
+        c.createStudentGrade("John", rubric1);
+
+        assertNull(c.getStudentGradesForRubric("Portuguese"));
+    } 
+
+
 }

@@ -1,5 +1,7 @@
 package main;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class Controller {
     private ArrayList<Rubric> rubrics = new ArrayList<>();
@@ -53,8 +55,51 @@ public class Controller {
         if(getRubricByName(rubricName) != null)
             grades = getRubricByName(rubricName).getGrades();
         return grades;
+    }
 
+    public int average(int[] numbers){
+        int total = 0;
+        for(int i =0; i < numbers.length; i++){
+            total += numbers[i];
+        }
+        return total/numbers.length;
+    }
 
+    public int maxScore(int[] numbers){
+        int max = numbers[0];
+    
+        for (int i = 1; i < numbers.length; i++){
+            if (numbers[i] > max)
+                max = numbers[i];
+        }
+        return max;
+    }
+
+    public int minScore(int[] numbers){
+        List<Integer> list= new ArrayList<>();
+        for (int j : numbers) {
+            list.add(j);
+        }
+        Collections.sort(list);
+        return list.get(0);
+    }
+
+    public double standardDeviation(int[] numbers){
+        double sum = 0.0;
+        double standardDeviation = 0.0;
+        int length = numbers.length;
+
+        for(double num : numbers) {
+            sum += num;
+        }
+
+        double mean = sum/length;
+
+        for(double num: numbers) {
+            standardDeviation += Math.pow(num - mean, 2);
+        }
+
+        return Math.sqrt(standardDeviation/length);
     }
     
 }

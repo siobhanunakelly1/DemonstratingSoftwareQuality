@@ -147,5 +147,32 @@ public class TestJunit {
         assertTrue(c.getStudentGradesForRubric("Portuguese").isEmpty());
     } 
 
+    @Test
+    public void testAverage(){
+        Controller c = new Controller();
+        int[] numbers = {5, 15, 25};
+        assertEquals(15, c.average(numbers));
+    }
+
+    @Test
+    public void testMax(){
+        Controller c = new Controller();
+        int[] numbers = {5, 15, 25};
+        assertEquals(25, c.maxScore(numbers));
+    }
+
+    @Test
+    public void testMin(){
+        Controller c = new Controller();
+        int[] numbers = {5, 15, 25};
+        assertEquals(5, c.minScore(numbers));
+    }
+
+    @Test
+    public void testStandardDeviation(){
+        Controller c = new Controller();
+        int[] numbers = {1, 2, 3};
+        assertEquals(0.81649658092773, c.standardDeviation(numbers), 0.01);
+    }
 
 }

@@ -15,8 +15,7 @@
 7. Add Student grade functionality to Controller Class including: **5**
  - create a grade
  - add a score
- - get all rubrics
- - get Rubric by name 
+ - get all student grades for rubric
 8. Average, standard deviation, minimum and maximum calculations for Rubric **5**
 9. Average, standard deviation, minimum and maximum calculations for Criterion **2**
 10. Create validation for maximum number of criteria per Rubric and possible scores for Criterion **3**
